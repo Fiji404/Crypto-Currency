@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../sass/styles.scss" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.01.min.css"
+        />
+        <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
+        <script type="module" src="../scripts/app.js"></script>
+        <link rel="icon" href="../icons/crypto-icon.png" />
+        <title>Crypto currency rates</title>
+    </head>
+    <body>
+        <h1 class="app-title">Find your <span class="app-title__special-word">Crypto</span> currency</h1>
+        <section class="find-options">
+            <form class="search-currency-form">
+                <input placeholder="Find your crypto" class="find-options__input-currency" type="text" />
+                <button class="find-options__search-currency-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </section>
+        <main class="searched-crypto-currencies"></main>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+@use './colors/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.app-title {
+    padding-block: 0.8rem;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    translate: 0 -100%;
+    animation: slideIn 800ms ease-in-out forwards;
+    &__special-word {
+        color: colors.$accent-color;
+    }
+    @keyframes slideIn {
+        50% {
+            translate: 0 10%;
+        }
+        to {
+            translate: 0;
+        }
+    }
+}
+
+.find-options {
+    margin-inline: auto;
+    width: fit-content;
+    &__input-currency {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1.8rem;
+        padding: 0.5rem;
+        border-radius: 0.4em;
+        border: 2px solid colors.$accent-color;
+        outline: none;
+        opacity: 0;
+        animation: showIn 500ms 1s forwards;
+        translate: 0 -30%;
+        transition: background-color 100ms;
+        &:focus {
+            border: 2px solid lighten(colors.$accent-color, 5);
+        }
+        &:hover {
+            background-color: darken(rgb(241, 243, 244), 5);
+        }
+    }
+    &__search-currency-btn {
+        width: 40px;
+        aspect-ratio: 1;
+        background-color: colors.$accent-color;
+        border: none;
+        border-radius: 0.4rem;
+        color: colors.$white;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 300ms;
+        &.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        & > .fa-magnifying-glass {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.searched-crypto-currencies {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.crypto-currency-details {
+    opacity: 0;
+    scale: 0.95;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgb(236, 236, 236);
+    border: 2px solid darken(colors.$accent-color, 5);
+    border-radius: 0.4rem;
+    padding: 1rem;
+    animation: originate 500ms ease-in-out forwards;
+    &__currency {
+        font-size: 2rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__info {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+}
+
+@keyframes originate {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes showIn {
+    to {
+        translate: 0 0;
+        opacity: 1;
+    }
+}
